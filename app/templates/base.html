@@ -1,0 +1,37 @@
+<!doctype html>
+<title>{% block title %}{% endblock %}</title>
+<nav>
+    <h1>Users</h1>
+</nav>
+<table class="content">
+    <thead>
+        <tr>
+            <th>Avatar </th>
+            <th>First Name </th>
+            <th>Last Name </th>
+            <th>Gender </th>
+            <th>City </th>
+            <th>Postcode </th>
+            <th>Email </th>
+            <th>Username </th>
+            <th>Birth Date </th>
+            <th>Phone </th>
+        </tr>
+    </thead>
+    <tbody>
+        {%- for result in results %}
+        <tr>
+            <td><img src="static/images/{{ result['imageName'] }}" </td>
+            <td>{{ result['firstName'] }}</td>
+            <td>{{ result['lastName'] }}</td>
+            <td>{{ result['gender'] }}</td>
+            <td>{{ result['city'] }}</td>
+            <td>{{ result['postcode'] }}</td>
+            <td>{{ result['email'] }}</td>
+            <td>{{ result['username'] }}</td>
+            <td>{{ result['birthdate'] }}</td>
+            <td>{{ result['phone'] }}</td>
+        </tr>
+        {%- endfor %}
+    </tbody>
+</table>

@@ -4,6 +4,7 @@ COPY . /flaskapp
 COPY ./requirements.txt /flaskapp/requirements.txt
 
 WORKDIR /flaskapp
+ENV APP_FOLDER /flaskapp
 
 RUN pip install -r requirements.txt
 

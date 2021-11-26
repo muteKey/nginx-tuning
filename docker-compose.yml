@@ -2,17 +2,20 @@ version: "3.8"
 
 services:
   app-server:
+    container_name: flaskapp
     build:
       context: ./flaskapp
-    container_name: flaskapp
     expose:
       - 5000
       
   web-server:
     image: nginx
     container_name: web-server
+    # build:
+      # context: ./nginx
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+    #   - ./purge.lua:/etc/nginx/purge.lua
     ports:
       - 8080:80
     depends_on:

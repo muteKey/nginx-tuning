@@ -49,7 +49,7 @@ function purge(filename)
 end
 
 if ngx ~= nil then
-        local cache_key = ngx.var.lua_purge_upstream .. ngx.var.request_uri
+        local cache_key = ngx.var.request_uri
         local filename = cache_filename(ngx.var.lua_purge_path, ngx.var.lua_purge_levels, cache_key)
         purge(filename)
         ngx.say("OK")
